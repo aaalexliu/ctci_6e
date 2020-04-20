@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.*;
 
 public class Permutation {
 
@@ -36,6 +36,27 @@ public class Permutation {
     return s1Count.equals(s2Count);
   }
 
+  public static int[] stringToCountArray(String s) {
+    int[] countArray = new int[128];
+    for (char c : s.toCharArray()) {
+      countArray[c] += 1;
+    }
+    return countArray;
+  }
+
+  public static boolean permutationCTCI2(String s1, String s2) {
+    int[] s1Count = stringToCountArray(s1);
+    // System.out.println(Arrays.toString(s1Count));
+    // System.out.println(Arrays.toString(s2Count));
+    for (char c : s2.toCharArray()) {
+      s1Count[c] --;
+      if (s1Count[c] < 0 ) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static void main(String[] args) {
     String[][] pairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
     for (String[] pair : pairs) {
@@ -43,8 +64,10 @@ public class Permutation {
       String word2 = pair[1];
       boolean anagram = permutation(word1, word2);
       boolean anagram2 = permutation2(word1, word2);
+      boolean anagram3 = permutationCTCI2(word1, word2);
       System.out.println("v1 " + word1 + ", " + word2 + ": " + anagram);
       System.out.println("v2 " + word1 + ", " + word2 + ": " + anagram2);
+      System.out.println("v3 CTCI " + word1 + ", " + word2 + ": " + anagram3);
     }
   }
 }
