@@ -53,13 +53,26 @@ public class Palindrome {
     return !checkOddCount(charMap);
   }
 
+  public static boolean isPermutePalindromeC(String s) {
+    int bitVector = 0;
+    for (char c : s.toCharArray()) {
+      int val = getCharNumber(c);
+      if (val < 0) continue;
+      bitVector ^= (1 << val);
+    }
+    if (bitVector == 0) return true;
+    
+    return (((bitVector - 1) & (bitVector)) == 0);
+  }
+
   public static void main(final String[] args) {
     String word1 = "Tact Coa";
-    boolean bool1 = isPermutePalindrome(word1);
+    boolean bool1 = isPermutePalindromeA(word1);
 
     System.out.println(word1 + ": isPalindrome? " + bool1);
 
     String word2 = "Rats live on no evil star";
-    System.out.println(word2 + ": isPalindrome? " + isPermutePalindromeA(word2));
+    System.out.println(word2 + ": isPalindrome A? " + isPermutePalindromeA(word2));
+    System.out.println(word2 + ": isPalindrome C? " + isPermutePalindromeC(word2));
   }
 }
