@@ -28,8 +28,6 @@ public class StringCompression {
     // compressed[index1] = s.charAt(index2);
     index1++;
     compressed[index1] = (char) (tempCount + '0');
-    index1++;
-    compressed[index1] = '\0';
     return new String(compressed).trim();
   }
 
@@ -37,14 +35,7 @@ public class StringCompression {
     String uncompressed1 = "aabcccccaaa";
     String compressed1 = "a2b1c5a3";
     String output1 = compressString(uncompressed1);
-    System.out.println(output1.length());
-    System.out.println(compressed1.length());
-    boolean wtf = output1.equals(compressed1);
-    System.out.println(wtf);
-    // for (int i = 0; i < output1.length(); i++) {
-    //   System.out.println(output1.charAt(i));
-    //   System.out.println(compressed1.charAt(i));
-    // }
+    
     System.out.println(output1 + ", " + compressed1 + " match?: " + output1.equals(compressed1)); 
   }
 }
