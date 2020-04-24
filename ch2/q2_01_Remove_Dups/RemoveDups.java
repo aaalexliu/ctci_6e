@@ -25,8 +25,31 @@ public class RemoveDups {
     }
   }
 
+  public static void deleteDupsB(LinkedListNode head) {
+    // delete dups without buffer. O(N^2) time
+    LinkedListNode perm = head;
+
+    while (head != null) {
+      int headData = head.data;
+
+      LinkedListNode prev = head;
+      LinkedListNode current = prev.next;
+      while(current != null) {
+        if (current.data == headData) {
+          prev.setNext(current.next);
+          current = current.next;
+        } else {
+          prev = current;
+          current = current.next;
+        }
+        System.out.println(perm.printForward());
+      }
+
+      head = head.next;
+    }
+  }
+
   public static void main(String[] args) {
-    System.out.println("hello");
     LinkedListNode first = new LinkedListNode(0, null, null);
     LinkedListNode head = first;
 		LinkedListNode second = first;
@@ -43,11 +66,11 @@ public class RemoveDups {
 		LinkedListNode cloneB = head.clone();
     LinkedListNode cloneC = head.clone();
     
-    deleteDupsA(cloneA);
+    // deleteDupsA(cloneA);
     deleteDupsB(cloneB);
 
-    System.out.println(cloneA.printForward());
+    // System.out.println(cloneA.printForward());
 		System.out.println(cloneB.printForward());
-		System.out.println(cloneC.printForward());
+		// System.out.println(cloneC.printForward());
   }
 }
