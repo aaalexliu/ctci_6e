@@ -1,4 +1,4 @@
-import javafx.scene.control.cell.CheckBoxTreeCell;
+package ch1.q1_09_String_Rotation;
 
 public class StringRotation {
 

@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - RemoveDups",
+      "request": "launch",
+      "mainClass": "ch2.q2_01_Remove_Dups.RemoveDups",
+      "projectName": "ctci_6e_1ddc003d"
+    }
+  ]
+}

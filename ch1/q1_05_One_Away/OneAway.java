@@ -1,4 +1,5 @@
-import java.util.*;
+package ch1.q1_05_One_Away;
+
 import java.lang.Math;
 
 public class OneAway {

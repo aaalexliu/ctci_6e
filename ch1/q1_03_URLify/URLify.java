@@ -1,4 +1,4 @@
-import java.util.*;
+package ch1.q1_03_URLify;
 
 public class URLify {
 

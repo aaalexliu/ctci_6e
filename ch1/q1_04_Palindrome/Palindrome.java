@@ -1,3 +1,5 @@
+package ch1.q1_04_Palindrome;
+
 import java.util.*;
 
 public class Palindrome {
@@ -13,7 +15,7 @@ public class Palindrome {
     return -1;
   }
 
-  public static HashMap getCharMap(String s) {
+  public static HashMap<Integer, Integer> getCharMap(String s) {
     HashMap<Integer, Integer> charMap = new HashMap<Integer, Integer>();
     for (char c : s.toCharArray()) {
       int charNum = getCharNumber(c);
@@ -47,7 +49,7 @@ public class Palindrome {
     // System.out.println(c + " " + (int) c);
 
     // }
-    HashMap charMap = getCharMap(s);
+    HashMap<Integer, Integer> charMap = getCharMap(s);
     System.out.println(charMap);
 
     return !checkOddCount(charMap);

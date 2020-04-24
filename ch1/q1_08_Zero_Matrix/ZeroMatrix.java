@@ -1,3 +1,5 @@
+package ch1.q1_08_Zero_Matrix;
+
 import java.util.Arrays;
 
 public class ZeroMatrix {

@@ -1,3 +1,5 @@
+package ch1.q1_06_String_Compression;
+
 public class StringCompression {
 
   public static String compressStringA(String s) {

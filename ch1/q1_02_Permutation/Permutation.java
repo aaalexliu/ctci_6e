@@ -1,3 +1,5 @@
+package ch1.q1_02_Permutation;
+
 import java.util.*;
 
 public class Permutation {
