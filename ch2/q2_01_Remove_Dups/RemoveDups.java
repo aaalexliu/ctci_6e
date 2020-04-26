@@ -64,12 +64,12 @@ public class RemoveDups {
 
 		LinkedListNode cloneA = head.clone();
 		LinkedListNode cloneB = head.clone();
-    LinkedListNode cloneC = head.clone();
+    // LinkedListNode cloneC = head.clone();
     
-    // deleteDupsA(cloneA);
+    deleteDupsA(cloneA);
     deleteDupsB(cloneB);
 
-    // System.out.println(cloneA.printForward());
+    System.out.println(cloneA.printForward());
 		System.out.println(cloneB.printForward());
 		// System.out.println(cloneC.printForward());
   }
