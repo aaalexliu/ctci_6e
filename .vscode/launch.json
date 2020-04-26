@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Partition",
+      "request": "launch",
+      "mainClass": "ch2.q2_04_Partition.Partition",
+      "projectName": "ctci_6e_1ddc003d"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - DeleteMiddle",
       "request": "launch",
       "mainClass": "ch2.q2_03_Delete_Middle.DeleteMiddle",
