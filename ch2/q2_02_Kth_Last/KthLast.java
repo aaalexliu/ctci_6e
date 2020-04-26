@@ -30,12 +30,31 @@ public class KthLast {
     }
   }
 
+  public static LinkedListNode getKthLastB(LinkedListNode head, int k) {
+    LinkedListNode p1 = head;
+    LinkedListNode p2 = head;
+
+    for (int i = 0; i < k; i++) {
+      if (p1.next == null) return null;
+      p1 = p1.next;
+    }
+    
+    while(p1.next != null) {
+      p1 = p1.next;
+      p2 = p2.next;
+    }
+    return p2;
+  }
+
   public static void main(String[] args) {
     int[] array = {0, 1, 2, 3, 4, 5, 6};
     LinkedListNode head = LinkedListNode.createLinkedListFromArray(array);
     System.out.println(head.printForward());
     for (int i = 0; i < array.length + 1; i++) {
       printKthLastA(head, i);
+      LinkedListNode methodB = getKthLastB(head, i);
+      int bData =  (methodB == null) ? -1 : methodB.data;
+      System.out.println("Method B, k: " + i + ", kth: " + bData);
     }
   }
 }
