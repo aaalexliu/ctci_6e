@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Palindrome",
+      "request": "launch",
+      "mainClass": "ch2.q2_06_Palindrome.Palindrome",
+      "projectName": "ctci_6e_1ddc003d"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - SumLists",
       "request": "launch",
       "mainClass": "ch2.q2_05_Sum_Lists.SumLists",
