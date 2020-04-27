@@ -76,14 +76,38 @@ public class Partition {
     return headReturn;
   }
 
+  public static LinkedListNode partitionC(LinkedListNode node, int p) {
+    LinkedListNode head = node;
+    LinkedListNode tail = node;
+
+    while (node != null) {
+      LinkedListNode next = node.next;
+
+      if (node.data < p) {
+        node.next = head;
+        head = node;
+      }
+      if (node.data >= p) {
+        tail.next = node;
+        tail = node;
+      }
+      node = next;
+    }
+    tail.next = null;
+
+    return head;
+  }
+
   public static void main(String[] args) {
     int[] array = {3, 5, 8, 5, 10, 2, 1};
     LinkedListNode headA = LinkedListNode.createLinkedListFromArray(array);
     LinkedListNode headB = LinkedListNode.createLinkedListFromArray(array);
+    LinkedListNode headC = LinkedListNode.createLinkedListFromArray(array);
 
     boolean partitionSuccessA = partitionListA(headA, 5);
-    System.out.println("boo");
     LinkedListNode partitionB = partitionListB(headB, 5);
+    LinkedListNode partitionC = partitionListB(headC, 5);
+
 
 
     System.out.println("Partition on 5 status: " + partitionSuccessA);
@@ -91,5 +115,8 @@ public class Partition {
 
     System.out.println("Partition on 5 method B");
     System.out.println(partitionB.printForward());
+
+    System.out.println("Partition on 5 method C");
+    System.out.println(partitionC.printForward());
   }
 }
