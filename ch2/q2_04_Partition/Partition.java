@@ -4,7 +4,7 @@ import ch2.LinkedListNode;
 
 public class Partition {
 
-  public static boolean partitionList(LinkedListNode head, int p) {
+  public static boolean partitionListA(LinkedListNode head, int p) {
     LinkedListNode maxP = null;
     LinkedListNode curr = head;
 
@@ -35,20 +35,61 @@ public class Partition {
         curr = curr.next;
       }
       // System.out.println(curr.data);
-      System.out.println(head.printForward());
-
+      // System.out.println(head.printForward());
     }
 
     return true;
   }
 
+  public static LinkedListNode partitionListB(LinkedListNode node, int p) {
+    LinkedListNode head = null;
+    LinkedListNode tail = null;
+    LinkedListNode headReturn = null;
+
+    while (node != null) {
+      System.out.println(node.data);
+      if (node.data < p) {
+        if (head == null) {
+          head = new LinkedListNode(node.data);
+          headReturn = head;
+        } else {
+          LinkedListNode clone = new LinkedListNode(node.data);
+          head.setNext(clone);
+          head = head.next;
+          // node = node.next;
+        }
+      }
+      if (node.data >= p) {
+        if (tail == null) {
+          tail = new LinkedListNode(node.data);
+        } else {
+          LinkedListNode clone = new LinkedListNode(node.data);
+          tail.setPrevious(clone);;
+          tail = tail.prev;
+          // node = node.next;
+        }
+      }
+      node = node.next;
+    }
+    System.out.println("hello");
+    head.setNext(tail);
+    return headReturn;
+  }
+
   public static void main(String[] args) {
     int[] array = {3, 5, 8, 5, 10, 2, 1};
-    LinkedListNode head = LinkedListNode.createLinkedListFromArray(array);
+    LinkedListNode headA = LinkedListNode.createLinkedListFromArray(array);
+    LinkedListNode headB = LinkedListNode.createLinkedListFromArray(array);
 
-    boolean partitionSuccess = partitionList(head, 5);
+    boolean partitionSuccessA = partitionListA(headA, 5);
+    System.out.println("boo");
+    LinkedListNode partitionB = partitionListB(headB, 5);
 
-    System.out.println("Partition on 5 status: " + partitionSuccess);
-    System.out.println(head.printForward());
+
+    System.out.println("Partition on 5 status: " + partitionSuccessA);
+    System.out.println(headA.printForward());
+
+    System.out.println("Partition on 5 method B");
+    System.out.println(partitionB.printForward());
   }
 }
