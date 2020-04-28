@@ -6,6 +6,8 @@ import ch2.LinkedListNode;
 
 public class Intersection {
 
+  // this method takes O(A + B) time and O(A) space
+  // ctci method takes O(A + B) time and O(1) space
   public static LinkedListNode findIntersection(
     LinkedListNode head1, LinkedListNode head2) {
     
