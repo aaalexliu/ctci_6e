@@ -35,7 +35,10 @@ public class SetOfStacks {
   }
 
   public int popAt(int index) {
-    return stacks.get(index).pop();
+    Stack<Integer> stack = stacks.get(index);
+    int val = stack.pop();
+    if (stack.size() == 0) stacks.remove(index);
+    return val;
   }
 
   private Stack<Integer> nextAvailableStack() {
