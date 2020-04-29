@@ -2,7 +2,7 @@ package ch3.q3_04_Stack_Via_Queue;
 
 import java.util.Stack;
 
-//  1 2 3 4
+//  [1 2 3 4]
 // [4 3 2 1]
 // 5 6 7 8
 
@@ -23,21 +23,21 @@ public class MyQueue<T> {
   }
 
   public void add(T val) {
-    if (oldest.size() != 0) {
-      popLeftToRight(oldest, newest);
-    }
+    // if (oldest.size() != 0) {
+    //   popLeftToRight(oldest, newest);
+    // }
     newest.push(val);
   }
 
   public T peek() {
-    if (newest.size() != 0) {
+    if (oldest.size() == 0) {
       popLeftToRight(newest, oldest);
     }
     return oldest.peek();
   }
 
   public T remove() {
-    if (newest.size() != 0) {
+    if (oldest.size() == 0) {
       popLeftToRight(newest, oldest);
     }
     return oldest.pop();
