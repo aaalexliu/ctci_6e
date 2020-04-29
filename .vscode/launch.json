@@ -4,6 +4,13 @@
       "type": "java",
       "name": "CodeLens (Launch) - Tester",
       "request": "launch",
+      "mainClass": "ch3.q3_04_Stack_Via_Queue.Tester",
+      "projectName": "ctci_6e_1ddc003d"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Tester",
+      "request": "launch",
       "mainClass": "ch3.q3_03_Stack_Of_Plates.Tester",
       "projectName": "ctci_6e_1ddc003d"
     },
