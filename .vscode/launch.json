@@ -1,5 +1,13 @@
 {
+  "console": "internalConsole",
   "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SortStack",
+      "request": "launch",
+      "mainClass": "ch3.q3_05_Sort_Stack.SortStack",
+      "projectName": "ctci_6e_1ddc003d"
+    },
     {
       "type": "java",
       "name": "CodeLens (Launch) - Tester",
