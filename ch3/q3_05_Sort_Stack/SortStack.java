@@ -48,7 +48,6 @@ public class SortStack extends Stack<Integer> {
     }
     
     Stack sorted = sort(unsortedStack);
-		System.out.println("booy");
 		// while(!stack.isEmpty()) {
 		// 	  System.out.println(stack.pop());
     //  }
