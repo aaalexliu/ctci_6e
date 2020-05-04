@@ -5,6 +5,13 @@
       "type": "java",
       "name": "CodeLens (Launch) - Question",
       "request": "launch",
+      "mainClass": "ch4.q4_01_Route_Between_Nodes.Question",
+      "projectName": "ctci_6e_1ddc003d"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Question",
+      "request": "launch",
       "mainClass": "ch3.q3_06_Animal_Shelter.Question",
       "projectName": "ctci_6e_1ddc003d"
     },
