@@ -5,6 +5,13 @@
       "type": "java",
       "name": "CodeLens (Launch) - Question",
       "request": "launch",
+      "mainClass": "ch4.q4_03_List_Of_Depths.Question",
+      "projectName": "ctci_6e_1ddc003d"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Question",
+      "request": "launch",
       "mainClass": "ch4.q4_02_Minimal_Tree.Question",
       "projectName": "ctci_6e_1ddc003d"
     },
