@@ -12,14 +12,14 @@ public class TreeNode {
     size = 1;
   }
 
-  private void setLeftChild(TreeNode left) {
+  public void setLeftChild(TreeNode left) {
     this.left = left;
     if (left != null) {
       left.parent = this;
     }
   }
 
-  private void setRightChild(TreeNode right) {
+  public void setRightChild(TreeNode right) {
     this.right = right;
     if (right != null) {
       right.parent = this;
@@ -77,28 +77,33 @@ public class TreeNode {
     return 1 + Math.max(leftHeight, rightHeight);
   }
 
-  private static TreeNode createMinimalBST(int[] array, int begin, int end) {
-    System.out.println(begin + ", " + end);
-
-    if (begin == end) {
-      return new TreeNode(array[begin]);
-    }
-    int middleIndex = (int) (Math.ceil((end - begin) / (double) 2) + begin);
-
-    TreeNode middle = new TreeNode(array[middleIndex]);
-
-    TreeNode left = createMinimalBST(array, begin, middleIndex - 1);
-    middle.setLeftChild(left);
-
-    if (middleIndex != end) {
-      TreeNode right = createMinimalBST(array, middleIndex + 1, end);
-      middle.setRightChild(right);
-    }
-
-    return middle;
-  }
-
-  public static TreeNode createMinimalBST(int[] array) {
-    return createMinimalBST(array, 0, array.length - 1);
-  }
+  public static TreeNode createTreeFromArray(int[] array) {
+		if (array.length > 0) {
+			TreeNode root = new TreeNode(array[0]);
+			java.util.Queue<TreeNode> queue = new java.util.LinkedList<TreeNode>();
+			queue.add(root);
+			boolean done = false;
+			int i = 1;
+			while (!done) {
+				TreeNode r = (TreeNode) queue.element();
+				if (r.left == null) {
+					r.left = new TreeNode(array[i]);
+					i++;
+					queue.add(r.left);
+				} else if (r.right == null) {
+					r.right = new TreeNode(array[i]);
+					i++;
+					queue.add(r.right);
+				} else {
+					queue.remove();
+				}
+				if (i == array.length) {
+					done = true;
+				}
+			}
+			return root;
+		} else {
+			return null;
+		}
+	}
 }
