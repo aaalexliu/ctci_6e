@@ -27,7 +27,7 @@ public class TreeNode {
   }
 
   public void insertInOrder(int d) {
-    System.out.println("d: " + d + " data: " + data);
+    // System.out.println("d: " + d + " data: " + data);
     if (d <= data) {
       if (left == null) {
         setLeftChild(new TreeNode(d));
@@ -69,7 +69,8 @@ public class TreeNode {
     if (root == null) return;
 
     printTree(root.left);
-    System.out.println("Height: " + root.height() + " depth: " + root.depth() + " data: " + root.data);
+    // System.out.println("Height: " + root.height() + " depth: " + root.depth() + " data: " + root.data);
+    System.out.println("Depth: " + root.depth() + " data: " + root.data);
     printTree(root.right);
   }
 
