@@ -25,14 +25,14 @@ public class Question {
     return middle;
   }
 
-  public static TreeNode createMinimalBST(int[] array) {
+  public static TreeNode createMinimalBSTFromArray(int[] array) {
     return createMinimalBST(array, 0, array.length - 1);
   }
   
   public static void main(String[] args) {
     int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    TreeNode root = createMinimalBST(array);
+    TreeNode root = createMinimalBSTFromArray(array);
     System.out.println("Root? " + root.data);
     System.out.println("Created BST? " + root.isBST());
     TreeNode.printTree(root);

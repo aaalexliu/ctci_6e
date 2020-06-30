@@ -73,6 +73,7 @@ public class Question {
     int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     TreeNode root = TreeNode.createTreeFromArray(nodes_flattened);
     System.out.println(root.height());
+    TreeNode.printTree(root);
     // ArrayList<LinkedList<TreeNode>> levelLinkedList = createLevelLinkedListDFS(root);
     ArrayList<LinkedList<TreeNode>> levelLinkedList = createLevelLinkedListDFS(root);
 

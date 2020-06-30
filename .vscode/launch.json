@@ -3,6 +3,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Question",
       "request": "launch",
       "mainClass": "ch4.q4_03_List_Of_Depths.Question",

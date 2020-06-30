@@ -27,10 +27,12 @@ public class TreeNode {
   }
 
   public void insertInOrder(int d) {
+    System.out.println("d: " + d + " data: " + data);
     if (d <= data) {
       if (left == null) {
         setLeftChild(new TreeNode(d));
       } else {
+        System.out.println(left.data);
         left.insertInOrder(d);
       }
     } else {
@@ -67,7 +69,7 @@ public class TreeNode {
     if (root == null) return;
 
     printTree(root.left);
-    System.out.println("Height: " + root.height() + " data: " + root.data);
+    System.out.println("Height: " + root.height() + " depth: " + root.depth() + " data: " + root.data);
     printTree(root.right);
   }
 
@@ -77,33 +79,40 @@ public class TreeNode {
     return 1 + Math.max(leftHeight, rightHeight);
   }
 
+  public int depth() {
+    int depth = 0;
+    TreeNode current = this;
+    // System.out.println(current.data);
+    while (current.parent != null) {
+      // System.out.println(current.parent.data);
+      depth += 1;
+      current = current.parent;
+    }
+    return depth;
+  }
+
   public static TreeNode createTreeFromArray(int[] array) {
-		if (array.length > 0) {
-			TreeNode root = new TreeNode(array[0]);
-			java.util.Queue<TreeNode> queue = new java.util.LinkedList<TreeNode>();
-			queue.add(root);
-			boolean done = false;
-			int i = 1;
-			while (!done) {
-				TreeNode r = (TreeNode) queue.element();
-				if (r.left == null) {
-					r.left = new TreeNode(array[i]);
-					i++;
-					queue.add(r.left);
-				} else if (r.right == null) {
-					r.right = new TreeNode(array[i]);
-					i++;
-					queue.add(r.right);
-				} else {
-					queue.remove();
-				}
-				if (i == array.length) {
-					done = true;
-				}
-			}
-			return root;
-		} else {
-			return null;
-		}
-	}
+    return createMinimalBST(array, 0, array.length - 1);
+  }
+  
+  public static TreeNode createMinimalBST(int[] array, int begin, int end) {
+    System.out.println(begin + ", " + end);
+
+    if (begin == end) {
+      return new TreeNode(array[begin]);
+    }
+    int middleIndex = (int) (Math.ceil((end - begin) / (double) 2) + begin);
+
+    TreeNode middle = new TreeNode(array[middleIndex]);
+
+    TreeNode left = createMinimalBST(array, begin, middleIndex - 1);
+    middle.setLeftChild(left);
+
+    if (middleIndex != end) {
+      TreeNode right = createMinimalBST(array, middleIndex + 1, end);
+      middle.setRightChild(right);
+    }
+
+    return middle;
+  }
 }
