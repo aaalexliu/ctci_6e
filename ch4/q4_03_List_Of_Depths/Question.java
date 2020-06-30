@@ -76,7 +76,10 @@ public class Question {
     TreeNode.printTree(root);
     // ArrayList<LinkedList<TreeNode>> levelLinkedList = createLevelLinkedListDFS(root);
     ArrayList<LinkedList<TreeNode>> levelLinkedList = createLevelLinkedListDFS(root);
-
     printResult(levelLinkedList);
+
+    //Create Linked List using BFS
+    ArrayList<LinkedList<TreeNode>> levelLinkedListBFS = createLevelLinkedListBFS(root);
+    printResult(levelLinkedListBFS);
   }
 }
