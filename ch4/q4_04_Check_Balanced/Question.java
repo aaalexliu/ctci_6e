@@ -6,6 +6,9 @@ import java.util.Stack;
 
 public class Question {
 
+  // if we check height at every node, then if the tree is completely unbalanced
+  // it would be n + (n-1) + (n-2) + ... + 1
+  // so.... it would be like less than n^2. which is pretty crap
   public static boolean isBalancedBruteForce(TreeNode root) {
     if (root == null) return true;
     
@@ -26,6 +29,10 @@ public class Question {
 
       if (Math.abs(leftHeight - rightHeight) > 1) return false;
     }
+    return true;
+  }
+
+  public static boolean isBalancedOptimized(TreeNode root) {
     return true;
   }
   public static void main(String[] args) {
