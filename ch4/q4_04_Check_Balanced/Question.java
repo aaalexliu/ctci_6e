@@ -2,9 +2,32 @@ package ch4.q4_04_Check_Balanced;
 
 import ch4.TreeNode;
 import java.lang.Math;
+import java.util.Stack;
 
 public class Question {
 
+  public static boolean isBalancedBruteForce(TreeNode root) {
+    if (root == null) return true;
+    
+    Stack<TreeNode> toCheck = new Stack<TreeNode>();
+    toCheck.push(root);
+    while(!toCheck.empty()) {
+      TreeNode curr = toCheck.pop();
+      int leftHeight = 0;
+      int rightHeight = 0;
+      if (curr.left != null) {
+        leftHeight = curr.left.height();
+        toCheck.push(curr.left);
+      }
+      if (curr.right != null) {
+        rightHeight = curr.right.height();
+        toCheck.push(curr.right);
+      }
+
+      if (Math.abs(leftHeight - rightHeight) > 1) return false;
+    }
+    return true;
+  }
   public static void main(String[] args) {
     int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     TreeNode rootBalanced = TreeNode.createTreeFromArray(nodes_flattened);
@@ -13,7 +36,11 @@ public class Question {
 
     TreeNode rootUnbalanced = new TreeNode(10);
     for (int i = 0; i < 10; i++) {
-			rootUnbalanced.insertInOrder((int) Math.random() * 100);
-		}
+			rootUnbalanced.insertInOrder((int) (Math.random() * 100));
+    }
+    TreeNode.printTree(rootUnbalanced);
+
+    System.out.println("balanced is balanced? brute" + isBalancedBruteForce(rootBalanced));
+    System.out.println("unbalanced is unbalanced? brute" + isBalancedBruteForce(rootUnbalanced));
   }
 }

@@ -32,7 +32,6 @@ public class TreeNode {
       if (left == null) {
         setLeftChild(new TreeNode(d));
       } else {
-        System.out.println(left.data);
         left.insertInOrder(d);
       }
     } else {
