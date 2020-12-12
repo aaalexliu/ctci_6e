@@ -54,7 +54,7 @@ public class LoopDetection {
     // System.out.println("start of loop: " + loopStart.data);
 
     int list_length = 100;
-		int k = 10;
+		// int k = 10;
 		
 		// Create linked list
 		LinkedListNode[] nodes = new LinkedListNode[list_length];

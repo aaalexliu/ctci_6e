@@ -6,6 +6,7 @@ import java.util.Stack;
 
 public class Question {
 
+
   // if we check height at every node, then if the tree is completely unbalanced
   // it would be n + (n-1) + (n-2) + ... + 1
   // so.... it would be like less than n^2. which is pretty crap
@@ -33,7 +34,10 @@ public class Question {
   }
 
   public static boolean isBalancedOptimized(TreeNode root) {
-    return true;
+
+    if (root == null) return true;
+    return false;
+    
   }
   public static void main(String[] args) {
     int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

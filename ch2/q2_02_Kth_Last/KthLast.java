@@ -8,14 +8,14 @@ public class KthLast {
     LinkedListNode tempK = null;
     int tailLength = 0;
 
-    LinkedListNode prev = null;
+    // LinkedListNode prev = null;
     LinkedListNode curr = head;
     while (curr != null) {
       tailLength += 1;
       if ((tempK == null) && (tailLength - k == 1)) {
         tempK = head;
       }
-      prev = curr;
+      // prev = curr;
       curr = curr.next;
 
       if (tempK != null && (tailLength - k > 1)){

@@ -3,6 +3,10 @@ package ch3.q3_02_Stack_Min;
 import java.util.Stack;
 
 public class StackWithMin2 extends Stack<Integer>{
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
   public Stack<Integer> min;
 
   public StackWithMin2() {

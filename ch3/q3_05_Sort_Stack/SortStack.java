@@ -4,6 +4,10 @@ import java.util.Stack;
 
 public class SortStack extends Stack<Integer> {
 
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
   Stack<Integer> tempStack;
 
   public SortStack() {
@@ -19,7 +23,7 @@ public class SortStack extends Stack<Integer> {
 
   }
 
-  public static Stack sort(Stack<Integer> s) {
+  public static Stack<Integer> sort(Stack<Integer> s) {
     Stack<Integer> rightStack = new Stack<Integer>();
 
     while(!s.empty()) {
@@ -39,7 +43,7 @@ public class SortStack extends Stack<Integer> {
 
   public static void main(String[] args) {
     SortStack stack = new SortStack();
-    Stack unsortedStack = new Stack();
+    Stack<Integer> unsortedStack = new Stack<Integer>();
 		for (int i = 0; i < 10; i++) {
       int r = (int) (Math.random() * 1000);
       
@@ -47,7 +51,7 @@ public class SortStack extends Stack<Integer> {
       unsortedStack.push(r);
     }
     
-    Stack sorted = sort(unsortedStack);
+    Stack<Integer> sorted = sort(unsortedStack);
 		// while(!stack.isEmpty()) {
 		// 	  System.out.println(stack.pop());
     //  }
